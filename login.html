@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="icon"
+        href="https://previews.123rf.com/images/captainvector/captainvector1703/captainvector170309311/74165534-college-logo-element.jpg">
+    <title>College Admission - Contact Form</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef2f3;
+            padding: 20px;
+
+        }
+
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            max-width: 500px;
+            margin: auto;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        button {
+            margin-top: 20px;
+            width: 100%;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #f0fff0;
+            border: 1px dashed #4CAF50;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="form-container" id="formBox">
+        <h2>Contact Details Form</h2>
+        <form id="contactForm">
+            <label for="name">Your Name:</label>
+            <textarea id="name"></textarea>
+
+            <label for="qualification">Qualificatin (With subject):</label>
+            <textarea id="Qualificatin"></textarea>
+
+            <label for="address">Address:</label>
+            <textarea id="address"></textarea>
+
+            <label for="city">City:</label>
+            <input type="text" id="city">
+
+            <label for="state">State:</label>
+            <input type="text" id="state">
+
+            <label for="pin">PIN Code:</label>
+            <input type="text" id="pin">
+
+            <label for="mobile">Mobile Number:</label>
+            <input type="text" id="mobile">
+
+            <label for="email">Email ID:</label>
+            <input type="email" id="email">
+
+            <button type="submit">Submit</button>
+        </form>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        // DOM Access Methods
+        const form = document.getElementById("contactForm");
+        const output = document.getElementById("output");
+
+        // Event Listener
+        form.addEventListener("submit", function (event) {
+            event.preventDefault(); // prevent page reload
+
+            // Get values using getElementById
+            const address = document.getElementById("address").value;
+            const city = document.querySelector("#city").value;
+            const state = document.querySelector("#state").value;
+            const pin = document.getElementById("pin").value;
+            const mobile = document.querySelectorAll("input")[3].value; // using querySelectorAll
+            const email = document.getElementById("email").value;
+
+            // Create output using createElement, innerText, appendChild
+            output.innerHTML = ""; // clear old output
+            const heading = document.createElement("h3");
+            heading.textContent = "Form Data Submitted:";
+            heading.classList.add("green-heading");
+            output.appendChild(heading);
+
+            const ul = document.createElement("ul");
+
+            const data = [
+                `Name: ${document.getElementById("name").value}`,
+                `Qualification: ${document.getElementById("Qualificatin").value}`,
+                `Address: ${address}`,
+                `City: ${city}`,
+                `State: ${state}`,
+                `PIN: ${pin}`,
+                `Mobile: ${mobile}`,
+                `Email: ${email}`
+            ];
+
+            data.forEach((item) => {
+                const li = document.createElement("li");
+                li.innerText = item;
+                ul.appendChild(li);
+            });
+
+            output.appendChild(ul);
+        });
+
+        form.addEventListener("submit", function (event) {
+            alert("✅ Successfully submitted the form!");
+            return;
+        });
+    </script>
+
+</body>
+
+</html>

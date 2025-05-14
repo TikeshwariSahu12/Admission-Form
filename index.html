@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon"
+        href="https://previews.123rf.com/images/captainvector/captainvector1703/captainvector170309311/74165534-college-logo-element.jpg">
+    <title>Registration Form</title>
+    <style>
+        body {
+            background-color: #f4f4f4;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        #head {
+            padding: 20px;
+            height: 60px;
+            text-align: center;
+            background-color: rgb(5, 42, 110);
+            color: white;
+            font-size: 35px;
+        }
+
+        .header {
+            padding: 10px;
+            border: 2px solid black;
+            background-color: white;
+            text-align: center;
+        }
+
+        .head1 {
+            color: rgb(14, 14, 209);
+            font-size: 22px;
+        }
+
+        .head2 {
+            color: rgb(11, 11, 118);
+            font-size: 30px;
+            margin: 0;
+        }
+
+        .head3 {
+            color: blue;
+            font-size: 16px;
+        }
+
+        .login {
+            background-color: rgb(242, 242, 104);
+            margin: 30px auto;
+            padding: 20px;
+            max-width: 600px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .login h2,
+        .login h3 {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input,
+        select,
+        textarea {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        button {
+            padding: 12px;
+            background-color: rgb(5, 42, 110);
+            color: white;
+            border: none;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: rgb(3, 30, 80);
+        }
+
+        a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 18px;
+            color: #007BFF;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="head">REGULAR COLLEGE</div>
+
+    <div class="header">
+        <p class="head1">GOVERNMENT CO-ED POLYTECHNIC RAIPUR</p>
+        <p class="head2"><b>शासकीय सह शिक्षा पॉलीटेक्निक, रायपुर</b></p>
+        <p class="head3">Affiliated to Chhattisgarh Swami Vivekanand Technical University, Bhilai, District-Durg</p>
+    </div>
+
+    <div class="login">
+        <h2>ADMISSION FORM</h2>
+        <h3>B.A / B.Com / B.Sc</h3>
+        <h3>Last Date: 20/05/2025</h3>
+
+        <form action="#" method="post">
+            <div>
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div>
+                <label for="email">Email ID</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div>
+                <label for="dob">Date of Birth</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+
+            <div>
+                <label for="gender">Gender</label>
+                <select id="gender" name="gender" required>
+                    <option value="">--Select Gender--</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="course">Course</label>
+                <select id="course" name="course" required>
+                    <option value="">--Select Course--</option>
+                    <option value="BA">B.A</option>
+                    <option value="BCom">B.Com</option>
+                    <option value="BSc">B.Sc</option>
+                </select>
+            </div>0
+
+            <div>
+                <label for="address">Address</label>
+                <textarea id="address" name="address" rows="3" placeholder="Enter your address" required></textarea>
+            </div>
+
+            <div>
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" pattern="[0-9]{10}" required>
+            </div>
+
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <a href="login.html">Already Registered? Login Here</a>
+</body>
+
+</html>
